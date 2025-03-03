@@ -5,6 +5,7 @@
   background-color: black;
   padding: 0 20px;
   font-family: var(--font-ui);
+  box-shadow: 0 0 5px 2px rgba(51, 52, 142, 255);
 }
 
 .main-nav > .logo {
@@ -26,4 +27,48 @@
 .main-nav > .nav-links > a {
   text-decoration: none;
   color: white;
+  padding: 0 5px;
+  position: relative;
+}
+
+.main-nav > .nav-links > a::before,
+.main-nav > .nav-links > a::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.main-nav > .nav-links > a::before {
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  transform-origin: top left;
+  transform: scaleX(0);
+  border-radius: 5px;
+}
+
+.main-nav > .nav-links > a::after {
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 1.5px;
+  transform-origin: bottom right;
+  transform: scaleX(0);
+  border-radius: 5px;
+}
+
+.main-nav > .nav-links > a:hover::before,
+.main-nav > .nav-links > a:hover::after {
+  width: 100%;
+  transform: scaleX(1);
+  background-color: rgba(51, 52, 142, 255);
+}
+
+.main-nav > .nav-links > .active::before,
+.main-nav > .nav-links > .active::after {
+  width: 100%;
+  transform: scaleX(1);
+  background-color: rgba(51, 52, 142, 255);
 }

@@ -1,6 +1,6 @@
 import "./Navbar.css";
 import nasaLogo from "../assets/images/NASA-logo.png";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export function Navbar() {
   return (
@@ -9,11 +9,36 @@ export function Navbar() {
         <img src={nasaLogo} alt="NASA logo" />
       </div>
       <div className="nav-links">
-        <Link to="/">Home</Link>
-        <Link to="/apod">APOD</Link>
-        <Link to="/mars-rover">Mars Rover</Link>
-        <Link to="/neo-tracker">NEO</Link>
-        <Link to="/earth-imagery">Earth Imagery</Link>
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to="/apod"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          APOD
+        </NavLink>
+        <NavLink
+          to="/mars-rover"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Mars Rover
+        </NavLink>
+        <NavLink
+          to="/neo-tracker"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          NEO
+        </NavLink>
+        <NavLink
+          to="/earth-imagery"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Earth Imagery
+        </NavLink>
       </div>
     </nav>
   );
