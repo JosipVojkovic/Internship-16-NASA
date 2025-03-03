@@ -1,0 +1,25 @@
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 0 20px;
+  color: white;
+}
+
+.main-nav > .logo {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  padding: 10px 0;
+}
+
+.logo > img {
+  width: 100%;
+}
+
+.main-nav > ul {
+  list-style-type: none;
+  display: flex;
+  gap: 15px;
+}

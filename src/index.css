@@ -1,0 +1,19 @@
+:root {
+  --font-ui: "Teko", sans-serif;
+  --content-font: "Orbitron", sans-serif;
+}
+
+@font-face {
+  font-family: "Teko";
+  src: url("./assets/fonts/Teko/Teko-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Orbitron";
+  src: url("./assets/fonts/Orbitron/Orbitron-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 700;
+  font-style: normal;
+}
