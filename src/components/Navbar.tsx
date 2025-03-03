@@ -1,5 +1,6 @@
 import "./Navbar.css";
 import nasaLogo from "../assets/images/NASA-logo.png";
+import { Link } from "react-router-dom";
 
 export function Navbar() {
   return (
@@ -7,12 +8,13 @@ export function Navbar() {
       <div className="logo">
         <img src={nasaLogo} alt="NASA logo" />
       </div>
-      <ul>
-        <li>APOD</li>
-        <li>Mars Rover</li>
-        <li>NEO</li>
-        <li>Earth Imagery</li>
-      </ul>
+      <div className="nav-links">
+        <Link to="/">Home</Link>
+        <Link to="/apod">APOD</Link>
+        <Link to="/mars-rover">Mars Rover</Link>
+        <Link to="/neo-tracker">NEO</Link>
+        <Link to="/earth-imagery">Earth Imagery</Link>
+      </div>
     </nav>
   );
 }

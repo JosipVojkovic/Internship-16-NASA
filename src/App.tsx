@@ -17,10 +17,16 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path={routes.HOME} element={<HomePage />}></Route>
           <Route path={routes.APOD} element={<ApodPage />}></Route>
-          <Route path={routes.HOME} element={<MarsRoverPage />}></Route>
-          <Route path={routes.APOD} element={<NeoTrackerPage />}></Route>
-          <Route path={routes.APOD} element={<EarthImageryPage />}></Route>
-          <Route path={routes.APOD} element={<PageNotFound />}></Route>
+          <Route path={routes.MARS_ROVER} element={<MarsRoverPage />}></Route>
+          <Route path={routes.NEO_TRACKER} element={<NeoTrackerPage />}></Route>
+          <Route
+            path={routes.EARTH_IMAGERY}
+            element={<EarthImageryPage />}
+          ></Route>
+          <Route
+            path={routes.PAGE_NOT_FOUND}
+            element={<PageNotFound />}
+          ></Route>
         </Route>
       </Routes>
     </BrowserRouter>
