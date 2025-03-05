@@ -2,9 +2,41 @@ import telescope from "../assets/images/telescope.png";
 import marsRover from "../assets/images/marsRover.png";
 import tracker from "../assets/images/radar.png";
 import earth from "../assets/images/earth.png";
+import earthAnimation from "../assets/images/Earth_rotating.gif";
+import meteorAnimation from "../assets/images/meteor.webp";
+import marsRoverAnimation from "../assets/images/marsRoverAnimation.png";
+import telescopeAnimation from "../assets/images/telescopeAnimation.jpg";
 import "./HomePage.css";
+import { useState } from "react";
 
 export function HomePage() {
+  const [activeImage, setActiveImage] = useState<string>("");
+
+  const handleMouseEnter = (image: string) => {
+    setActiveImage(image);
+  };
+
+  const handleMouseLeave = () => {
+    setActiveImage("");
+  };
+
+  let activeImageClass = "";
+
+  switch (activeImage) {
+    case earthAnimation:
+      activeImageClass = "earth-animation";
+      break;
+    case meteorAnimation:
+      activeImageClass = "meteor-animation";
+      break;
+    case marsRoverAnimation:
+      activeImageClass = "mars-rover-animation";
+      break;
+    case telescopeAnimation:
+      activeImageClass = "telescope-animation";
+      break;
+  }
+
   return (
     <>
       <header>
@@ -22,6 +54,10 @@ export function HomePage() {
       </header>
 
       <section className="navigation-cards">
+        {activeImage && (
+          <img src={activeImage} alt="" className={activeImageClass} />
+        )}
+
         <div className="navigation-cards-header">
           <h2>Embark on Your Space Journey</h2>
           <p>
@@ -33,8 +69,13 @@ export function HomePage() {
         </div>
 
         <div className="navigation-cards-container">
-          <div className="navigation-card">
+          <div
+            className="navigation-card"
+            onMouseEnter={() => handleMouseEnter(telescopeAnimation)}
+            onMouseLeave={handleMouseLeave}
+          >
             <img src={telescope} alt="Hubble telecope icon" />
+
             <h3>Astronomy Picture of the Day (APOD) Gallery</h3>
             <p>
               Explore a daily selection of awe-inspiring space images curated by
@@ -42,7 +83,11 @@ export function HomePage() {
             </p>
           </div>
 
-          <div className="navigation-card">
+          <div
+            className="navigation-card"
+            onMouseEnter={() => handleMouseEnter(marsRoverAnimation)}
+            onMouseLeave={handleMouseLeave}
+          >
             <img src={marsRover} alt="Mars rover icon" />
             <h3>Mars Rover Photos</h3>
             <p>
@@ -51,7 +96,11 @@ export function HomePage() {
             </p>
           </div>
 
-          <div className="navigation-card">
+          <div
+            className="navigation-card"
+            onMouseEnter={() => handleMouseEnter(meteorAnimation)}
+            onMouseLeave={handleMouseLeave}
+          >
             <img src={tracker} alt="Radar icon" />
             <h3>Near Earth Objects (NEO) Tracker</h3>
             <p>
@@ -60,7 +109,11 @@ export function HomePage() {
             </p>
           </div>
 
-          <div className="navigation-card">
+          <div
+            className="navigation-card"
+            onMouseEnter={() => handleMouseEnter(earthAnimation)}
+            onMouseLeave={handleMouseLeave}
+          >
             <img src={earth} alt="Eath imagery icon" />
             <h3>Earth Imagery</h3>
             <p>

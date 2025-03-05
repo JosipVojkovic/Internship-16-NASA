@@ -6,6 +6,7 @@ header {
   align-items: center;
   justify-content: center;
   padding: 20px;
+  z-index: 1;
 }
 
 header > .header-text {
@@ -28,12 +29,14 @@ header > .header-text {
 }
 
 .navigation-cards {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 50px 20px;
   background-color: rgb(255, 255, 255);
   color: black;
   gap: 50px;
+  overflow: hidden;
 }
 
 .navigation-cards > .navigation-cards-header {
@@ -73,6 +76,7 @@ header > .header-text {
   background-color: rgb(245, 245, 245);
   text-align: center;
   transition: ease 0.1s;
+  z-index: 1;
 }
 
 .navigation-card:hover {
@@ -81,4 +85,80 @@ header > .header-text {
 
 .navigation-card > img {
   width: 100%;
+}
+
+.earth-animation {
+  position: absolute;
+  width: 350px;
+  top: -350px;
+  left: -350px;
+  animation: earthAnimation 4s linear;
+}
+
+.mars-rover-animation {
+  position: absolute;
+  width: 400px;
+  top: 50%;
+  right: -400px;
+  animation: marsRoverAnimation 4s linear;
+}
+
+.meteor-animation {
+  position: absolute;
+  width: 300px;
+  top: 50%;
+  right: -300px;
+  animation: meteorAnimation 1.5s linear;
+}
+
+.telescope-animation {
+  position: absolute;
+  width: 400px;
+  top: 20%;
+  left: -400px;
+  animation: telescopeAnimation 3s linear;
+}
+
+@keyframes earthAnimation {
+  0% {
+    top: -350px;
+    left: -350px;
+  }
+  100% {
+    top: 100%;
+    left: 100%;
+  }
+}
+
+@keyframes marsRoverAnimation {
+  0% {
+    top: 50%;
+    right: -400px;
+  }
+  100% {
+    top: 50%;
+    right: 100%;
+  }
+}
+
+@keyframes meteorAnimation {
+  0% {
+    top: -300px;
+    right: -300px;
+  }
+  100% {
+    top: 100%;
+    right: 100%;
+  }
+}
+
+@keyframes telescopeAnimation {
+  0% {
+    top: 20%;
+    left: -400px;
+  }
+  100% {
+    top: 60%;
+    left: 100%;
+  }
 }
