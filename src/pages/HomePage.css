@@ -1,0 +1,84 @@
+header {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../assets/images/291984.jpg") center / cover no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+header > .header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1000px;
+  margin-top: 80px;
+}
+
+.header-text > h1 {
+  text-align: center;
+  font-size: 34px;
+}
+
+.header-text > p {
+  text-align: center;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.navigation-cards {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 20px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  gap: 50px;
+}
+
+.navigation-cards > .navigation-cards-header {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 1000px;
+  align-content: center;
+  gap: 20px;
+}
+
+.navigation-cards-header > h2 {
+  font-size: 24px;
+}
+
+.navigation-cards-header > p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.navigation-cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.navigation-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 300px;
+  border: 1px solid rgb(185, 185, 185);
+  border-radius: 20px;
+  padding: 20px;
+  cursor: pointer;
+  background-color: rgb(245, 245, 245);
+  text-align: center;
+  transition: ease 0.1s;
+}
+
+.navigation-card:hover {
+  border: 2px solid rgba(51, 52, 142);
+}
+
+.navigation-card > img {
+  width: 100%;
+}

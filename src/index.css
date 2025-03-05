@@ -9,6 +9,11 @@
   padding: 0;
 }
 
+body {
+  font-family: var(--content-font);
+  color: white;
+}
+
 @font-face {
   font-family: "Teko";
   src: url("./assets/fonts/Teko/Teko-VariableFont_wght.ttf") format("truetype");
