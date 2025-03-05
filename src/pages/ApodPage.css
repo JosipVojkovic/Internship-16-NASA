@@ -1,0 +1,30 @@
+.apod-gallery-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 50px 20px;
+  margin-top: 50px;
+}
+
+.apod-gallery-section > h1 {
+  color: black;
+  text-align: center;
+}
+
+.apod-gallery-section > .apod-gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+
+.apod-gallery-container > .apod-image {
+  width: 350px;
+  height: 350px;
+}
+
+.apod-image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

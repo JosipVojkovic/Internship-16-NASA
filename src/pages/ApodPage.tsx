@@ -8,12 +8,21 @@ export function ApodPage() {
     count: "20",
   });
 
-  console.log(data, loading, error);
-
   return (
-    <>
+    <section className="apod-gallery-section">
       <h1>APOD Page</h1>
-      <Spinner />
-    </>
+      <div className="apod-gallery-container">
+        {data ? (
+          data.map((d) => (
+            <div className="apod-image">
+              <img src={d.url} alt="" />
+            </div>
+          ))
+        ) : (
+          <p>There is no images!</p>
+        )}
+      </div>
+      {loading ? <Spinner /> : ""}
+    </section>
   );
 }
