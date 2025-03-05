@@ -8,17 +8,24 @@ import marsRoverAnimation from "../assets/images/marsRoverAnimation.png";
 import telescopeAnimation from "../assets/images/telescopeAnimation.jpg";
 import "./HomePage.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function HomePage() {
   const [activeImage, setActiveImage] = useState<string>("");
 
-  const handleMouseEnter = (image: string) => {
-    setActiveImage(image);
-  };
+  const navigate = useNavigate();
 
-  const handleMouseLeave = () => {
+  function handleMouseEnter(image: string) {
+    setActiveImage(image);
+  }
+
+  function handleMouseLeave() {
     setActiveImage("");
-  };
+  }
+
+  function handleClick(link: string) {
+    navigate(link);
+  }
 
   let activeImageClass = "";
 
@@ -73,6 +80,7 @@ export function HomePage() {
             className="navigation-card"
             onMouseEnter={() => handleMouseEnter(telescopeAnimation)}
             onMouseLeave={handleMouseLeave}
+            onClick={() => handleClick("/apod")}
           >
             <img src={telescope} alt="Hubble telecope icon" />
 
@@ -87,6 +95,7 @@ export function HomePage() {
             className="navigation-card"
             onMouseEnter={() => handleMouseEnter(marsRoverAnimation)}
             onMouseLeave={handleMouseLeave}
+            onClick={() => handleClick("/mars-rover")}
           >
             <img src={marsRover} alt="Mars rover icon" />
             <h3>Mars Rover Photos</h3>
@@ -100,6 +109,7 @@ export function HomePage() {
             className="navigation-card"
             onMouseEnter={() => handleMouseEnter(meteorAnimation)}
             onMouseLeave={handleMouseLeave}
+            onClick={() => handleClick("/neo-tracker")}
           >
             <img src={tracker} alt="Radar icon" />
             <h3>Near Earth Objects (NEO) Tracker</h3>
@@ -113,6 +123,7 @@ export function HomePage() {
             className="navigation-card"
             onMouseEnter={() => handleMouseEnter(earthAnimation)}
             onMouseLeave={handleMouseLeave}
+            onClick={() => handleClick("/earth-imagery")}
           >
             <img src={earth} alt="Eath imagery icon" />
             <h3>Earth Imagery</h3>
