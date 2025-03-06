@@ -12,3 +12,12 @@ export const getAPODsForLast20DaysParams = (page: number) => {
     },
   };
 };
+
+export const getAPODsForSelectedDate = (date: string) => {
+  return {
+    endpoint: "planetary/apod",
+    params: {
+      date,
+    },
+  };
+};

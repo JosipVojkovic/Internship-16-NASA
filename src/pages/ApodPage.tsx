@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import { Spinner } from "../components/Spinner";
 import { APODData } from "../types/types";
-import { getAPODsForLast20DaysParams } from "../services/apodService";
+import {
+  getAPODsForLast20DaysParams,
+  getAPODsForSelectedDate,
+} from "../services/apodService";
 import "./ApodPage.css";
 import { fetchFromAPI } from "../services/api";
 
@@ -10,15 +13,44 @@ export function ApodPage() {
   const [data, setData] = useState<APODData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [dateFilter, setDateFilter] = useState("");
 
-  const { endpoint, params } = getAPODsForLast20DaysParams(page);
+  console.log(dateFilter);
+
+  const handleScroll = () => {
+    if (loading || dateFilter) return;
+
+    const isBottomReached =
+      window.innerHeight + document.documentElement.scrollTop >=
+      document.documentElement.offsetHeight - 100;
+
+    if (isBottomReached) {
+      setPage((prev) => prev + 1);
+    }
+  };
+
+  const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.value) {
+      setPage(1);
+    }
+
+    setDateFilter(e.target.value);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const result: APODData[] = await fetchFromAPI(endpoint, params);
-        setData((prev) => [...prev, ...result]);
+        if (dateFilter) {
+          setData([]);
+          const { endpoint, params } = getAPODsForSelectedDate(dateFilter);
+          const filteredApod: APODData = await fetchFromAPI(endpoint, params);
+          setData([filteredApod]);
+        } else {
+          const { endpoint, params } = getAPODsForLast20DaysParams(page);
+          const apods = await fetchFromAPI(endpoint, params);
+          setData((prev) => (page === 1 ? apods : [...prev, ...apods]));
+        }
       } catch (err: unknown) {
         if (err instanceof Error) {
           setError(err.message);
@@ -31,21 +63,7 @@ export function ApodPage() {
     };
 
     fetchData();
-  }, [page]);
-
-  console.log(page);
-
-  const handleScroll = () => {
-    if (loading) return;
-
-    const isBottomReached =
-      window.innerHeight + document.documentElement.scrollTop >=
-      document.documentElement.offsetHeight - 100;
-
-    if (isBottomReached) {
-      setPage((prev) => prev + 1);
-    }
-  };
+  }, [page, dateFilter]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -55,11 +73,21 @@ export function ApodPage() {
   return (
     <section className="apod-gallery-section">
       <h1>Astronomy Picture of the Day (APOD) Gallery</h1>
-      {loading && <Spinner />}
-      <div className="apod-filters">
-        <label htmlFor="apod-date-filter">Filter by date:</label>
-        <input type="date" id="apod-date-filter" />
-      </div>
+      {loading && !data.length ? (
+        <Spinner />
+      ) : (
+        <div className="apod-filters">
+          <label htmlFor="apod-date-filter">Filter by date:</label>
+          <input
+            type="date"
+            id="apod-date-filter"
+            onChange={(e) => handleDateChange(e)}
+            value={dateFilter}
+            max={new Date().toISOString().split("T")[0]}
+          />
+        </div>
+      )}
+
       <div className="apod-gallery-container">
         {data.length === 0 && !loading && <p>No images available.</p>}
         {data?.map((d) => (
