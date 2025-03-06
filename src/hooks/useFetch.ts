@@ -3,7 +3,7 @@ import { FetchResult } from "../types/types";
 import { fetchFromAPI } from "../services/api";
 
 const useFetch = <T>(endpoint: string, params: object = {}): FetchResult<T> => {
-  const [data, setData] = useState<T | null>(null);
+  const [data, setData] = useState<T | []>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 

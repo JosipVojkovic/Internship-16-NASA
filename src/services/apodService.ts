@@ -1,13 +1,14 @@
-import { fetchFromAPI } from "./api";
+import { getDateXDaysAgo } from "../utils/dateHelpers";
 
-export const fetchAPOD = async (date?: string) => {
-  const endpoint = "planetary/apod";
-  const params = date ? { date } : {};
-  return await fetchFromAPI(endpoint, params);
-};
+export const getAPODsForLast20DaysParams = (page: number) => {
+  const startDate = getDateXDaysAgo(page * 20);
+  const endDate = getDateXDaysAgo(page * 20 - 19);
 
-export const fetchAPODsForLastDays = async (days: number = 20) => {
-  const endpoint = "planetary/apod";
-  const params = { count: days.toString() };
-  return await fetchFromAPI(endpoint, params);
+  return {
+    endpoint: "planetary/apod",
+    params: {
+      start_date: startDate,
+      end_date: endDate,
+    },
+  };
 };
