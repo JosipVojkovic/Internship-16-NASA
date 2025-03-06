@@ -1,14 +1,15 @@
 .apod-gallery-section {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 50px;
   padding: 50px 20px;
-  margin-top: 50px;
+  margin-top: 80px;
+  color: black;
 }
 
 .apod-gallery-section > h1 {
-  color: black;
   text-align: center;
+  font-size: 30px;
 }
 
 .apod-gallery-section > .apod-gallery-container {
@@ -19,12 +20,53 @@
 }
 
 .apod-gallery-container > .apod-image {
+  position: relative;
   width: 350px;
   height: 350px;
+  border: 1px solid rgb(185, 185, 185);
+  background-color: rgb(245, 245, 245);
+  overflow: hidden;
+  border-radius: 10px;
+  transition: ease 0.1s;
 }
 
 .apod-image > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.apod-slider {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  transition: ease 0.2s;
+}
+
+.apod-slider > h3 {
+  font-size: 16px;
+}
+
+.apod-slider > p {
+  font-size: 12px;
+  margin-left: auto;
+}
+
+.apod-gallery-container > .apod-image:hover {
+  cursor: pointer;
+  border-color: rgb(51, 52, 142);
+  box-shadow: 0 0 4px 2px rgb(51, 52, 142);
+  transform: scale(0.97);
+}
+
+.apod-gallery-container > .apod-image:hover .apod-slider {
+  bottom: 0;
 }

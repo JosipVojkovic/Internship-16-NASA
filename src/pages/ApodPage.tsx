@@ -54,12 +54,16 @@ export function ApodPage() {
 
   return (
     <section className="apod-gallery-section">
-      <h1>APOD Page</h1>
+      <h1>Astronomy Picture of the Day (APOD) Gallery</h1>
       {loading && <Spinner />}
       <div className="apod-gallery-container">
         {data.length === 0 && !loading && <p>No images available.</p>}
         {data?.map((d) => (
           <div key={d.title} className="apod-image">
+            <div className="apod-slider">
+              <h3>{d.title}</h3>
+              <p>{d.date}</p>
+            </div>
             <img src={d.url} alt={d.title} />
           </div>
         ))}
