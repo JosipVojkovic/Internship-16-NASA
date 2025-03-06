@@ -56,6 +56,10 @@ export function ApodPage() {
     <section className="apod-gallery-section">
       <h1>Astronomy Picture of the Day (APOD) Gallery</h1>
       {loading && <Spinner />}
+      <div className="apod-filters">
+        <label htmlFor="apod-date-filter">Filter by date:</label>
+        <input type="date" id="apod-date-filter" />
+      </div>
       <div className="apod-gallery-container">
         {data.length === 0 && !loading && <p>No images available.</p>}
         {data?.map((d) => (
