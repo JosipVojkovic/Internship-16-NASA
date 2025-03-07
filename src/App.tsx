@@ -7,6 +7,7 @@ import {
   EarthImageryPage,
   HomePage,
   MarsRoverPage,
+  MarsRoverPhotoPage,
   NeoTrackerPage,
   PageNotFound,
 } from "./pages";
@@ -20,6 +21,10 @@ function App() {
           <Route path={routes.APOD} element={<ApodPage />} />
           <Route path={routes.APOD_DETAILS} element={<ApodDetailsPage />} />
           <Route path={routes.MARS_ROVER} element={<MarsRoverPage />} />
+          <Route
+            path={routes.MARS_ROVER_DETAILS}
+            element={<MarsRoverPhotoPage />}
+          />
           <Route path={routes.NEO_TRACKER} element={<NeoTrackerPage />} />
           <Route path={routes.EARTH_IMAGERY} element={<EarthImageryPage />} />
         </Route>

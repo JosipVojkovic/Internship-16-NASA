@@ -1,35 +1,34 @@
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import "./ApodDetailsPage.css";
-import { APODData } from "../types";
+import { MarsRoverPhoto } from "../types";
 import { useEffect } from "react";
 
 export function MarsRoverPhotoPage() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { apodTitle } = useParams<{ apodTitle?: string }>();
-  const apod: APODData | undefined = location.state?.apod;
+  const { photoId } = useParams<{ photoId?: string }>();
+  const photo: MarsRoverPhoto | undefined = location.state?.photo;
 
   const handleBack = () => {
-    navigate("/apod");
+    navigate("/mars-rover");
   };
 
   useEffect(() => {
     const verifyData = () => {
-      if (!apod || !apodTitle) {
+      if (!photo || !photoId) {
         navigate("/404", { replace: true });
         return;
       }
 
-      const decodedTitle = decodeURIComponent(apodTitle);
-      if (decodedTitle !== apod.title) {
+      if (photoId !== photo.id.toString()) {
         navigate("/404", { replace: true });
       }
     };
 
     verifyData();
-  }, [apod, apodTitle, navigate]);
+  }, [photo, photoId, navigate]);
 
-  if (!apod) {
+  if (!photo) {
     return null;
   }
 
@@ -38,19 +37,19 @@ export function MarsRoverPhotoPage() {
       <div className="apod-text-img-wrapper">
         <div className="apod-details-text">
           <h1>
-            {apod.title}
-            <span className="apod-date">{apod.date}</span>
+            {photo.id}
+            <span className="apod-date">{photo.earth_date}</span>
           </h1>
 
           <div className="apod-explanation-container">
             <h2>Explanation</h2>
-            <p>{apod.explanation}</p>
+            <p>{photo.sol}</p>
           </div>
 
           <button onClick={handleBack}>Go Back</button>
         </div>
         <div className="apod-details-image">
-          <img src={apod.url} alt={`Image of ${apodTitle}`} />
+          <img src={photo.img_src} alt={`Image of ${photo.id}`} />
         </div>
       </div>
     </section>

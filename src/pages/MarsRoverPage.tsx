@@ -9,6 +9,8 @@ import {
   MarsRoverPhoto,
   MarsRoverPhotos,
 } from "../types/marsRoverTypes";
+import { MarsRoverPhotoCard } from "../components/MarsRoverPhotoCard";
+import { useNavigate } from "react-router-dom";
 
 export function MarsRoverPage() {
   const [page, setPage] = useState<number>(1);
@@ -21,10 +23,23 @@ export function MarsRoverPage() {
     camera: "",
   });
 
+  const navigate = useNavigate();
+
   const handleFilterChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     setFilter((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handlePhotoCardClick = (photoId: number) => {
+    const selectedPhoto = data.find((d) => d.id === photoId);
+
+    navigate(`/mars-rover/${photoId}`, {
+      state: {
+        photo: selectedPhoto,
+      },
+      replace: false,
+    });
   };
 
   useEffect(() => {
@@ -125,12 +140,11 @@ export function MarsRoverPage() {
           <Spinner />
         ) : data?.length > 0 ? (
           data.map((d) => (
-            <div key={d.id} className="rover-photo">
-              <img
-                src={d.img_src}
-                alt={`Mars photo taken by ${d.rover.name}`}
-              />
-            </div>
+            <MarsRoverPhotoCard
+              key={d.id}
+              photo={d}
+              onClick={handlePhotoCardClick}
+            />
           ))
         ) : (
           <p>{error ? error : "There are no photos for selected filters!"}</p>
