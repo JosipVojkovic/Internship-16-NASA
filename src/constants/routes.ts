@@ -7,6 +7,7 @@ export const routes: Routes = {
   MARS_ROVER: "/mars-rover",
   MARS_ROVER_DETAILS: "/mars-rover/:photoId",
   NEO_TRACKER: "/neo-tracker",
+  NEO_VISUALIZATION: "/neo-tracker/visualisation",
   EARTH_IMAGERY: "/earth-imagery",
   PAGE_NOT_FOUND: "/404",
 };

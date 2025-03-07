@@ -124,7 +124,7 @@
 
 .favourite-locations-table th:not(:last-child),
 .favourite-locations-table td:not(:last-child) {
-  border-right: 1px solid #ddd; /* Vertikalna crta između stupaca */
+  border-right: 1px solid #ddd;
 }
 
 .favourite-locations-table th {

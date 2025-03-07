@@ -1,0 +1,64 @@
+.neo-objects-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.neo-object-page-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.neo-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.neo-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: rgb(245, 245, 245);
+  padding: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: ease 0.1s;
+}
+
+.neo-item:hover {
+  border-color: rgb(51, 52, 142);
+  box-shadow: 0 0 4px 2px rgb(51, 52, 142);
+  transform: scale(0.97);
+}
+
+.neo-item > h3 {
+  border-bottom: 1px solid rgb(185, 185, 185);
+  font-style: italic;
+}
+
+.neo-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hazard-status {
+  width: 100%;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.danger {
+  background-color: red;
+  color: white;
+}
+
+.safe {
+  background-color: rgb(0, 150, 0);
+  color: white;
+}

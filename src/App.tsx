@@ -8,9 +8,11 @@ import {
   HomePage,
   MarsRoverPage,
   MarsRoverPhotoPage,
-  NeoTrackerPage,
+  NeoObjectPage,
   PageNotFound,
 } from "./pages";
+import { NeoTrackerLayout } from "./hoc";
+import { NeoStatsPage } from "./pages/NeoStatsPage";
 
 function App() {
   return (
@@ -25,8 +27,12 @@ function App() {
             path={routes.MARS_ROVER_DETAILS}
             element={<MarsRoverPhotoPage />}
           />
-          <Route path={routes.NEO_TRACKER} element={<NeoTrackerPage />} />
           <Route path={routes.EARTH_IMAGERY} element={<EarthImageryPage />} />
+
+          <Route element={<NeoTrackerLayout />}>
+            <Route path={routes.NEO_TRACKER} element={<NeoObjectPage />} />
+            <Route path={routes.NEO_VISUALIZATION} element={<NeoStatsPage />} />
+          </Route>
         </Route>
 
         <Route path="*" element={<PageNotFound />} />
