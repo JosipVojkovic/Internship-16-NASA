@@ -12,6 +12,43 @@
   font-size: 30px;
 }
 
+.earth-imagery-section > .location {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.favourite-location {
+  font-size: 12px;
+}
+
+.location > .lon-lat {
+  display: flex;
+  gap: 40px;
+  border-bottom: 1px solid rgb(185, 185, 185);
+  width: fit-content;
+}
+
+.earth-imagery-section > .location > button {
+  padding: 10px 20px;
+  width: fit-content;
+  border: 2px solid rgb(51, 52, 142);
+  border-radius: 10px;
+  background-color: white;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: var(--content-font);
+  cursor: pointer;
+  transition: ease 0.2s;
+}
+
+.earth-imagery-section > .location > button:hover {
+  background-color: rgb(51, 52, 142);
+  box-shadow: 0 0 5px black;
+  color: white;
+}
+
 .location-image-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -50,4 +87,46 @@
 
 .location-image-wrapper > .image-container > p {
   text-align: center;
+}
+
+.favourite-locations-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.favourite-locations-table {
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.favourite-locations-table th {
+  background-color: #f0f0f0;
+  padding: 12px;
+  text-align: center;
+  border-bottom: 2px solid #ddd;
+}
+
+.favourite-locations-table td {
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid rgb(245, 245, 245);
+}
+
+.no-locations-message {
+  color: #666;
+  margin-top: 1rem;
+}
+
+.favourite-locations-table th:not(:last-child),
+.favourite-locations-table td:not(:last-child) {
+  border-right: 1px solid #ddd; /* Vertikalna crta između stupaca */
+}
+
+.favourite-locations-table th {
+  position: relative;
 }

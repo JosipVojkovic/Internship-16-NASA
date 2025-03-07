@@ -1,10 +1,4 @@
-import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  Popup,
-  useMapEvents,
-} from "react-leaflet";
+import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
 import { LeafletMouseEvent } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
@@ -31,13 +25,7 @@ const MapClickHandler = ({
   return null;
 };
 
-export function EarthMap({
-  position,
-  coordinates,
-  handleMapClick,
-}: EarthMapProps) {
-  console.log(position);
-
+export function EarthMap({ position, handleMapClick }: EarthMapProps) {
   return (
     <MapContainer
       center={[51.505, -0.09]}
@@ -51,11 +39,7 @@ export function EarthMap({
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       />
       <MapClickHandler onMapClick={handleMapClick} />
-      {position && (
-        <Marker position={position}>
-          <Popup>{coordinates}</Popup>
-        </Marker>
-      )}
+      {position && <Marker position={position}></Marker>}
     </MapContainer>
   );
 }
