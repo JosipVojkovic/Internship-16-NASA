@@ -4,10 +4,49 @@
   gap: 40px;
 }
 
+.neo-objects-section > h2 {
+  text-align: center;
+}
+
 .neo-object-page-controls {
   display: flex;
   justify-content: space-between;
   gap: 20px;
+}
+
+.neo-object-page-controls > button {
+  border: 1px solid rgb(51, 52, 142);
+  background-color: transparent;
+  padding: ;
+}
+
+.neo-object-page-controls > button {
+  padding: 5px 10px;
+  border: 2px solid rgb(51, 52, 142);
+  border-radius: 10px;
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: var(--content-font);
+  cursor: pointer;
+  transition: ease 0.2s;
+}
+
+.neo-object-page-controls > button:disabled {
+  color: lightgrey;
+  border: 2px solid lightgray;
+}
+
+.neo-object-page-controls > button:disabled:hover {
+  background-color: transparent;
+  box-shadow: none;
+  color: lightgrey;
+}
+
+.neo-object-page-controls > button:hover {
+  background-color: rgb(51, 52, 142);
+  box-shadow: 0 0 5px black;
+  color: white;
 }
 
 .neo-list {
@@ -18,6 +57,7 @@
 }
 
 .neo-item {
+  width: calc(20% - 20px);
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -37,12 +77,17 @@
 .neo-item > h3 {
   border-bottom: 1px solid rgb(185, 185, 185);
   font-style: italic;
+  font-size: 18px;
 }
 
 .neo-details {
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+
+.neo-details > p {
+  font-size: 14px;
 }
 
 .hazard-status {

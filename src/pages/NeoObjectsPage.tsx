@@ -14,22 +14,7 @@ export function NeoObjectPage() {
 
   return (
     <div className="neo-objects-section">
-      <div className="neo-object-page-controls">
-        <button onClick={handlePrevious} disabled={currentPage === 0}>
-          Previous
-        </button>
-
-        <span>
-          Date: {currentDate} ({currentPage + 1} of {dates.length})
-        </span>
-
-        <button
-          onClick={handleNext}
-          disabled={currentPage === dates.length - 1}
-        >
-          Next
-        </button>
-      </div>
+      <h2>Date: {currentDate}</h2>
 
       <div className="neo-list">
         {currentNeos.map((neo) => (
@@ -65,6 +50,23 @@ export function NeoObjectPage() {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="neo-object-page-controls">
+        <button onClick={handlePrevious} disabled={currentPage === 0}>
+          Previous
+        </button>
+
+        <span>
+          ({currentPage + 1} of {dates.length})
+        </span>
+
+        <button
+          onClick={handleNext}
+          disabled={currentPage === dates.length - 1}
+        >
+          Next
+        </button>
       </div>
     </div>
   );
