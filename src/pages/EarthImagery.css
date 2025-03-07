@@ -1,0 +1,41 @@
+.earth-imagery-section {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: 80px;
+  padding: 50px 20px;
+}
+
+.earth-imagery-section > h1 {
+  text-align: center;
+  font-size: 30px;
+}
+
+.location-image-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.leaflet-container {
+  width: calc(50% - 20px);
+  height: 70vh;
+  z-index: 1;
+}
+
+.location-image-wrapper > .image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(50% - 20px);
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: rgb(245, 245, 245);
+  border: 2px solid rgb(185, 185, 185);
+}
+
+.location-image-wrapper > .image-container > img {
+  width: 100%;
+  height: 70vh;
+}
