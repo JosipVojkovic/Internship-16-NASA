@@ -1,0 +1,90 @@
+.mars-rover-details-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px 20px;
+  margin-top: 80px;
+  color: black;
+}
+
+.mars-rover-text-img-wrapper {
+  display: flex;
+  background-color: rgb(245, 245, 245);
+  border-radius: 20px;
+  overflow: hidden;
+  justify-content: space-between;
+  max-height: 80vh;
+}
+
+.mars-rover-details-text {
+  overflow: auto;
+  position: relative;
+  padding: 20px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mars-rover-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.mars-rover-details > p > span {
+  font-weight: 600;
+}
+
+.mars-rover-details > p {
+  font-size: 15px;
+  line-height: 24px;
+}
+
+.mars-rover-details-text > h1 {
+  border-bottom: 1px solid rgb(225, 225, 225);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  font-size: 24px;
+  padding-bottom: 5px;
+}
+
+.mars-rover-details-text > h1 > .photo-earth-date {
+  white-space: nowrap;
+  font-size: 18px;
+  color: rgb(139, 139, 139);
+}
+
+.mars-rover-details-text > button {
+  margin-top: auto;
+  padding: 10px 20px;
+  width: fit-content;
+  border: 2px solid rgb(51, 52, 142);
+  border-radius: 10px;
+  background-color: white;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: var(--content-font);
+  cursor: pointer;
+  transition: ease 0.2s;
+}
+
+.mars-rover-details-text > button:hover {
+  background-color: rgb(51, 52, 142);
+  box-shadow: 0 0 5px black;
+  color: white;
+}
+
+.mars-rover-details-image {
+  width: 50%;
+  max-height: 80vh;
+}
+
+.mars-rover-details-image > img {
+  width: 100%;
+  height: 100%;
+}

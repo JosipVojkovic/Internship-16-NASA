@@ -1,5 +1,5 @@
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import "./ApodDetailsPage.css";
+import "./MarsRoverPhotoPage.css";
 import { MarsRoverPhoto } from "../types";
 import { useEffect } from "react";
 
@@ -33,22 +33,29 @@ export function MarsRoverPhotoPage() {
   }
 
   return (
-    <section className="apod-details-section">
-      <div className="apod-text-img-wrapper">
-        <div className="apod-details-text">
+    <section className="mars-rover-details-section">
+      <div className="mars-rover-text-img-wrapper">
+        <div className="mars-rover-details-text">
           <h1>
-            {photo.id}
-            <span className="apod-date">{photo.earth_date}</span>
+            ID: {photo.id}
+            <span className="photo-earth-date">{photo.earth_date}</span>
           </h1>
 
-          <div className="apod-explanation-container">
-            <h2>Explanation</h2>
-            <p>{photo.sol}</p>
+          <div className="mars-rover-details">
+            <p>
+              <span>Rover:</span> {photo.rover.name}
+            </p>
+            <p>
+              <span>Sol (Martian day):</span> {photo.sol}
+            </p>
+            <p>
+              <span>Camera:</span> {photo.camera.name}
+            </p>
           </div>
 
           <button onClick={handleBack}>Go Back</button>
         </div>
-        <div className="apod-details-image">
+        <div className="mars-rover-details-image">
           <img src={photo.img_src} alt={`Image of ${photo.id}`} />
         </div>
       </div>
