@@ -1,0 +1,13 @@
+.visualization-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.visualization-section > h2 {
+  text-align: center;
+}
+
+.chart-wrapper > h3 {
+  margin-left: 60px;
+}

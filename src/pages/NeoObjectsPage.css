@@ -14,14 +14,12 @@
   gap: 20px;
 }
 
-.neo-object-page-controls > button {
-  border: 1px solid rgb(51, 52, 142);
-  background-color: transparent;
-  padding: ;
+.neo-object-page-controls > span {
+  font-size: 18px;
 }
 
 .neo-object-page-controls > button {
-  padding: 5px 10px;
+  padding: 7px 14px;
   border: 2px solid rgb(51, 52, 142);
   border-radius: 10px;
   background-color: transparent;
