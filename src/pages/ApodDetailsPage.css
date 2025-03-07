@@ -81,8 +81,10 @@
 
 .apod-details-image {
   width: 50%;
+  max-height: 80vh;
 }
 
 .apod-details-image > img {
   width: 100%;
+  height: 100%;
 }

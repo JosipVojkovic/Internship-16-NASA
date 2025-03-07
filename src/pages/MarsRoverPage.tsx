@@ -60,6 +60,8 @@ export function MarsRoverPage() {
     fetchData();
   }, [filter.rover, filter.date, filter.camera]);
 
+  console.log(data);
+
   return (
     <section className="mars-rover-section">
       <h1>Mars Rover</h1>

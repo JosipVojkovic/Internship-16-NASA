@@ -3,7 +3,7 @@ import "./ApodDetailsPage.css";
 import { APODData } from "../types";
 import { useEffect } from "react";
 
-export function ApodDetailsPage() {
+export function MarsRoverPhotoPage() {
   const location = useLocation();
   const navigate = useNavigate();
   const { apodTitle } = useParams<{ apodTitle?: string }>();

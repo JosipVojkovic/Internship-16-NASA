@@ -5,3 +5,4 @@ export * from "./NeoTrackerPage";
 export * from "./EarthImagery";
 export * from "./PageNotFound";
 export * from "./ApodDetailsPage";
+export * from "./MarsRoverPhotoPage";

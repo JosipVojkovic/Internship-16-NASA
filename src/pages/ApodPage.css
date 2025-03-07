@@ -50,6 +50,7 @@
   overflow: hidden;
   border-radius: 10px;
   transition: ease 0.1s;
+  cursor: pointer;
 }
 
 .apod-image > img {
@@ -83,7 +84,6 @@
 }
 
 .apod-gallery-container > .apod-image:hover {
-  cursor: pointer;
   border-color: rgb(51, 52, 142);
   box-shadow: 0 0 4px 2px rgb(51, 52, 142);
   transform: scale(0.97);
