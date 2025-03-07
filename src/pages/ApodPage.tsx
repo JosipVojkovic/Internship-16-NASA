@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import { Spinner } from "../components/Spinner";
-import { APODData } from "../types/types";
 import {
   getAPODsForLast20DaysParams,
   getAPODsForSelectedDate,
 } from "../services/apodService";
 import "./ApodPage.css";
 import { fetchFromAPI } from "../services/api";
+import { APODData } from "../types";
+import { useNavigate } from "react-router-dom";
+import { ApodCard } from "../components/ApodCard";
 
 export function ApodPage() {
   const [page, setPage] = useState<number>(1);
@@ -15,7 +17,7 @@ export function ApodPage() {
   const [error, setError] = useState<string | null>(null);
   const [dateFilter, setDateFilter] = useState("");
 
-  console.log(dateFilter);
+  const navigate = useNavigate();
 
   const handleScroll = () => {
     if (loading || dateFilter) return;
@@ -35,6 +37,19 @@ export function ApodPage() {
     }
 
     setDateFilter(e.target.value);
+  };
+
+  const handleApodCardClick = (apodTitle: string) => {
+    const selectedApod = data.find((d) => d.title === apodTitle);
+
+    window.scrollTo(0, 0);
+    console.log(selectedApod, apodTitle);
+
+    navigate(`/apod/${apodTitle}`, {
+      state: {
+        apod: selectedApod,
+      },
+    });
   };
 
   useEffect(() => {
@@ -91,13 +106,7 @@ export function ApodPage() {
       <div className="apod-gallery-container">
         {data.length === 0 && !loading && <p>No images available.</p>}
         {data?.map((d) => (
-          <div key={d.title} className="apod-image">
-            <div className="apod-slider">
-              <h3>{d.title}</h3>
-              <p>{d.date}</p>
-            </div>
-            <img src={d.url} alt={d.title} />
-          </div>
+          <ApodCard onClick={handleApodCardClick} apod={d} />
         ))}
       </div>
       {loading && data.length > 0 && <Spinner />}

@@ -1,0 +1,14 @@
+.apod-details-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 50px 20px;
+  margin-top: 80px;
+  color: black;
+}
+
+.apod-details-section > h1 {
+  text-align: center;
+  font-size: 30px;
+}

@@ -52,9 +52,15 @@
   border-radius: 5px;
 }
 
-.mars-rover-filters > button {
-  color: white;
-  background-color: rgb(51, 52, 142);
-  border: none;
-  padding: 5px 10px;
+.rover-photos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.rover-photo {
+  display: flex;
+  flex-direction: column;
+  width: calc(25% - 20px);
 }

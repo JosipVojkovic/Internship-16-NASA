@@ -15,13 +15,21 @@
 .location-image-wrapper {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 20px;
+  background-color: rgb(245, 245, 245);
+  border: 2px solid rgb(185, 185, 185);
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 .leaflet-container {
   width: calc(50% - 20px);
   height: 70vh;
   z-index: 1;
+  overflow: hidden;
+  border-right: 2px solid rgb(185, 185, 185);
+  border-radius: 20px;
 }
 
 .location-image-wrapper > .image-container {
@@ -30,12 +38,16 @@
   justify-content: center;
   width: calc(50% - 20px);
   border-radius: 20px;
+  border-left: 2px solid rgb(185, 185, 185);
+  background-color: rgb(235, 235, 235);
   overflow: hidden;
-  background-color: rgb(245, 245, 245);
-  border: 2px solid rgb(185, 185, 185);
 }
 
 .location-image-wrapper > .image-container > img {
   width: 100%;
   height: 70vh;
+}
+
+.location-image-wrapper > .image-container > p {
+  text-align: center;
 }

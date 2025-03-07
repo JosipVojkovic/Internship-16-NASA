@@ -8,7 +8,7 @@ import {
 import { LeafletMouseEvent } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import { EarthMapProps } from "../types/types";
+import { EarthMapProps } from "../types";
 
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({

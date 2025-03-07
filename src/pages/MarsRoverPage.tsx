@@ -1,24 +1,21 @@
 import { useEffect, useState } from "react";
 import "./MarsRoverPage.css";
-import { APODData } from "../types/types";
 import { Spinner } from "../components/Spinner";
-import curiosityRover from "../assets/images/curiosityRover.jpg";
-import opportunityRover from "../assets/images/opportunityRover.jpg";
-import spiritRover from "../assets/images/spiritRover.jpg";
-import securityCamera from "../assets/images/securityCamera.png";
 import { fetchFromAPI } from "../services/api";
 import { getRoverPhotos } from "../services";
+import { formattedDate } from "../utils/dateHelpers";
+import {
+  MarsRoverFilter,
+  MarsRoverPhoto,
+  MarsRoverPhotos,
+} from "../types/marsRoverTypes";
 
 export function MarsRoverPage() {
   const [page, setPage] = useState<number>(1);
-  const [data, setData] = useState<APODData[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [data, setData] = useState<MarsRoverPhoto[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
-  const [filter, setFilter] = useState<{
-    rover: string;
-    date: string;
-    camera: string;
-  }>({
+  const [filter, setFilter] = useState<MarsRoverFilter>({
     rover: "",
     date: "",
     camera: "",
@@ -32,6 +29,7 @@ export function MarsRoverPage() {
 
   useEffect(() => {
     const fetchData = async () => {
+      setError(null);
       setLoading(true);
       try {
         if (filter.rover && filter.date) {
@@ -40,11 +38,13 @@ export function MarsRoverPage() {
             filter.date,
             filter.camera
           );
-          const filteredRoverPhotos: APODData = await fetchFromAPI(
+
+          console.log(endpoint, params);
+          const filteredRoverPhotos: MarsRoverPhotos = await fetchFromAPI(
             endpoint,
             params
           );
-          setData([filteredRoverPhotos]);
+          setData(filteredRoverPhotos.photos);
         }
       } catch (err: unknown) {
         if (err instanceof Error) {
@@ -59,8 +59,6 @@ export function MarsRoverPage() {
 
     fetchData();
   }, [filter.rover, filter.date, filter.camera]);
-
-  console.log(data);
 
   return (
     <section className="mars-rover-section">
@@ -91,6 +89,7 @@ export function MarsRoverPage() {
               type="date"
               value={filter.date}
               onChange={(e) => handleFilterChange(e)}
+              max={formattedDate(new Date())}
             />
           </label>
 
@@ -115,8 +114,25 @@ export function MarsRoverPage() {
             </select>
           </label>
         </div>
+      </div>
 
-        <button>Filter</button>
+      <div className="rover-photos-container">
+        {!filter.rover || !filter.date ? (
+          <p>You have to select rover and date!</p>
+        ) : loading ? (
+          <Spinner />
+        ) : data?.length > 0 ? (
+          data.map((d) => (
+            <div key={d.id} className="rover-photo">
+              <img
+                src={d.img_src}
+                alt={`Mars photo taken by ${d.rover.name}`}
+              />
+            </div>
+          ))
+        ) : (
+          <p>{error ? error : "There are no photos for selected filters!"}</p>
+        )}
       </div>
     </section>
   );

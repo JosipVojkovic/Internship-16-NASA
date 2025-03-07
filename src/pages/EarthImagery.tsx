@@ -4,7 +4,7 @@ import "./EarthImagery.css";
 import { useEffect, useState } from "react";
 import { getLocationEarthImage } from "../services";
 import { fetchFromAPI } from "../services/api";
-import { EarthLocationImage } from "../types/types";
+import { EarthLocationImage } from "../types";
 
 export function EarthImageryPage() {
   const [position, setPosition] = useState<[number, number] | null>(null);
@@ -48,8 +48,6 @@ export function EarthImageryPage() {
     fetchData();
   }, [position]);
 
-  console.log(image, loading, error);
-
   return (
     <section className="earth-imagery-section">
       <h1>Earth Imagery</h1>
@@ -61,9 +59,15 @@ export function EarthImageryPage() {
           handleMapClick={handleMapClick}
         />
         <div className="image-container">
+          {!position && <p>Select location!</p>}
           {image && <img src={image.url} alt="" />}
           {position && loading && <Spinner />}
-          {error && <p>{error}</p>}
+          {error && (
+            <p>
+              There is no image for that location, please choose another
+              location.
+            </p>
+          )}
         </div>
       </div>
     </section>
