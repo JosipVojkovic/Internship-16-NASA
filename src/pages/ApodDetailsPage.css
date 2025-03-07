@@ -2,13 +2,87 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  justify-content: center;
   padding: 50px 20px;
   margin-top: 80px;
   color: black;
 }
 
-.apod-details-section > h1 {
-  text-align: center;
-  font-size: 30px;
+.apod-text-img-wrapper {
+  display: flex;
+  background-color: rgb(245, 245, 245);
+  border-radius: 20px;
+  overflow: hidden;
+  justify-content: space-between;
+  max-height: 80vh;
+}
+
+.apod-details-text {
+  overflow: auto;
+  position: relative;
+  padding: 20px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.apod-explanation-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.apod-explanation-container > h2 {
+  font-size: 20px;
+}
+
+.apod-explanation-container > p {
+  font-size: 15px;
+  line-height: 24px;
+}
+
+.apod-details-text > h1 {
+  border-bottom: 1px solid rgb(225, 225, 225);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  font-size: 24px;
+  padding-bottom: 5px;
+}
+
+.apod-details-text > h1 > .apod-date {
+  white-space: nowrap;
+  font-size: 18px;
+  color: rgb(139, 139, 139);
+}
+
+.apod-details-text > button {
+  margin-top: auto;
+  padding: 10px 20px;
+  width: fit-content;
+  border: 2px solid rgb(51, 52, 142);
+  border-radius: 10px;
+  background-color: white;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: var(--content-font);
+  cursor: pointer;
+  transition: ease 0.2s;
+}
+
+.apod-details-text > button:hover {
+  background-color: rgb(51, 52, 142);
+  box-shadow: 0 0 5px black;
+  color: white;
+}
+
+.apod-details-image {
+  width: 50%;
+}
+
+.apod-details-image > img {
+  width: 100%;
 }

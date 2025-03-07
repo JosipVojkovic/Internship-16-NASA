@@ -49,6 +49,7 @@ export function ApodPage() {
       state: {
         apod: selectedApod,
       },
+      replace: false,
     });
   };
 
