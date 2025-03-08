@@ -1,0 +1,82 @@
+.neo-details-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background-color: rgb(240, 240, 240);
+  width: fit-content;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 20px;
+  border-radius: 20px;
+}
+
+.neo-details-section > h1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.neo-details-section > h1 > span {
+  font-size: 14px;
+}
+
+.neo-details-text {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  gap: 20px;
+}
+
+.neo-details-text > p:first-of-type {
+  border-bottom: 1px solid rgb(180, 180, 180);
+  padding-bottom: 5px;
+}
+
+.neo-details-text > p > select {
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.neo-details-text > p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.neo-details-text > p > span {
+  font-weight: 600;
+}
+
+.neo-details-section > h1 > .hazard-status {
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-size: 15px;
+}
+
+.neo-details-section > button {
+  margin: auto auto 0 0;
+  padding: 10px 20px;
+  width: fit-content;
+  border: 2px solid rgb(51, 52, 142);
+  border-radius: 10px;
+  background-color: white;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: var(--content-font);
+  cursor: pointer;
+  transition: ease 0.2s;
+}
+
+.neo-details-section > button:hover {
+  background-color: rgb(51, 52, 142);
+  box-shadow: 0 0 5px black;
+  color: white;
+}

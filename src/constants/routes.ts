@@ -8,6 +8,7 @@ export const routes: Routes = {
   MARS_ROVER_DETAILS: "/mars-rover/:photoId",
   NEO_TRACKER: "/neo-tracker",
   NEO_VISUALIZATION: "/neo-tracker/visualisation",
+  NEO_DETAILS: "/neo-tracker/:neoId",
   EARTH_IMAGERY: "/earth-imagery",
   PAGE_NOT_FOUND: "/404",
 };

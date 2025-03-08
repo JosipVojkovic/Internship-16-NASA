@@ -8,6 +8,7 @@ import {
   HomePage,
   MarsRoverPage,
   MarsRoverPhotoPage,
+  NeoDetailsPage,
   NeoObjectPage,
   PageNotFound,
 } from "./pages";
@@ -32,6 +33,7 @@ function App() {
           <Route element={<NeoTrackerLayout />}>
             <Route path={routes.NEO_TRACKER} element={<NeoObjectPage />} />
             <Route path={routes.NEO_VISUALIZATION} element={<NeoStatsPage />} />
+            <Route path={routes.NEO_DETAILS} element={<NeoDetailsPage />} />
           </Route>
         </Route>
 
