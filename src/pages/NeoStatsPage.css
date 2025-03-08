@@ -11,3 +11,13 @@
 .chart-wrapper > h3 {
   margin-left: 60px;
 }
+
+@media only screen and (max-width: 650px) {
+  .visualization-section > h2 {
+    font-size: 22px;
+  }
+
+  .chart-wrapper > h3 {
+    font-size: 16px;
+  }
+}

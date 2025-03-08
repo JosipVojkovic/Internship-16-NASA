@@ -112,3 +112,13 @@
   background-color: rgb(0, 150, 0);
   color: white;
 }
+
+@media only screen and (max-width: 650px) {
+  .neo-objects-section > h2 {
+    font-size: 24px;
+  }
+
+  .neo-item {
+    width: 100%;
+  }
+}

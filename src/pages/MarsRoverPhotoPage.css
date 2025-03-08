@@ -11,6 +11,7 @@
 
 .mars-rover-text-img-wrapper {
   display: flex;
+  flex-wrap: wrap;
   background-color: rgb(245, 245, 245);
   border-radius: 20px;
   overflow: hidden;
@@ -92,4 +93,26 @@
 .mars-rover-details-image > img {
   width: 100%;
   height: 100%;
+}
+
+@media only screen and (max-width: 650px) {
+  .mars-rover-details-text > h1 {
+    font-size: 20px;
+  }
+
+  .photo-earth-date {
+    font-size: 14px !important;
+  }
+
+  .mars-rover-text-img-wrapper {
+    max-height: fit-content;
+  }
+
+  .mars-rover-details-text {
+    width: 100%;
+  }
+
+  .mars-rover-details-image {
+    width: 100%;
+  }
 }

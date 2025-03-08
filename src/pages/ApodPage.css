@@ -97,3 +97,9 @@
 .apod-gallery-container > .apod-image:hover .apod-slider {
   bottom: 0;
 }
+
+@media only screen and (max-width: 650px) {
+  .apod-gallery-section > h1 {
+    font-size: 24px;
+  }
+}

@@ -34,6 +34,7 @@
 
 .mars-rover-filters > div {
   display: flex;
+  flex-wrap: wrap;
   gap: 40px;
 }
 
@@ -78,4 +79,24 @@
   border-color: rgb(51, 52, 142);
   box-shadow: 0 0 4px 2px rgb(51, 52, 142);
   transform: scale(0.97);
+}
+
+@media only screen and (max-width: 650px) {
+  .mars-rover-section > h1 {
+    font-size: 24px;
+  }
+
+  .mars-rover-filters > div {
+    gap: 15px;
+  }
+
+  .rover-photo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: ease 0.1s;
+  }
 }

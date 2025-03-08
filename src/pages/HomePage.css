@@ -60,6 +60,7 @@ header > .header-text {
 
 .navigation-cards-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
 }
@@ -164,5 +165,33 @@ header > .header-text {
   100% {
     top: 60%;
     left: 100%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .header-text > h1 {
+    font-size: 24px;
+  }
+
+  .header-text > p {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .navigation-cards-header > h2 {
+    font-size: 20px;
+  }
+
+  .navigation-cards-header > p {
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  .navigation-card > h3 {
+    font-size: 16px;
+  }
+
+  .navigation-card > p {
+    font-size: 14px;
   }
 }

@@ -19,7 +19,6 @@ export function NeoObjectPage() {
     const selectedNeo = currentNeos.find((n) => n.id === neoId);
 
     window.scrollTo(0, 0);
-    console.log(selectedNeo, neoId);
 
     navigate(`/neo-tracker/${neoId}`, {
       state: {

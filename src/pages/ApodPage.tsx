@@ -45,7 +45,6 @@ export function ApodPage() {
     const selectedApod = data.find((d) => d.title === apodTitle);
 
     window.scrollTo(0, 0);
-    console.log(selectedApod, apodTitle);
 
     navigate(`/apod/${apodTitle}`, {
       state: {

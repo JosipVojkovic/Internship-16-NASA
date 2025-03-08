@@ -21,6 +21,7 @@
 
 .favourite-location {
   font-size: 12px;
+  text-align: center;
 }
 
 .location > .lon-lat {
@@ -145,4 +146,26 @@
 
 .favourite-locations-table th {
   position: relative;
+}
+
+@media only screen and (max-width: 650px) {
+  .earth-imagery-section > h1 {
+    font-size: 24px;
+  }
+
+  .leaflet-container {
+    width: 100%;
+  }
+
+  .location-image-wrapper > .image-container {
+    width: 100%;
+  }
+
+  .location-image-wrapper > .image-container > p {
+    padding: 10px;
+  }
+
+  .favourite-locations-container h2 {
+    font-size: 24px;
+  }
 }

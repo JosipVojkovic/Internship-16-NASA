@@ -72,8 +72,6 @@ export function EarthImageryPage() {
     setFavLocations(JSON.parse(storedLocations));
   }, []);
 
-  console.log(favLocations);
-
   return (
     <section className={`earth-imagery-section ${darkMode ? "dark-mode" : ""}`}>
       <h1>Earth Imagery</h1>

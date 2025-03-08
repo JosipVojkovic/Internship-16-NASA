@@ -73,3 +73,28 @@
 .page-not-found-section > .navigation-options > a {
   color: rgb(142, 145, 228);
 }
+
+@media only screen and (max-width: 650px) {
+  .page-not-found-section {
+    padding: 50px 20px;
+  }
+
+  .page-not-found-section > h1 {
+    font-size: 40px;
+  }
+
+  .page-not-found-section > h2 {
+    font-size: 24px;
+  }
+
+  .page-not-found-section > p {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .page-not-found-section > .navigation-options > button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+}

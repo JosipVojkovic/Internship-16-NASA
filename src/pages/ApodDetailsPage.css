@@ -10,6 +10,7 @@
 
 .apod-text-img-wrapper {
   display: flex;
+  flex-wrap: wrap;
   background-color: rgb(245, 245, 245);
   border-radius: 20px;
   overflow: hidden;
@@ -91,4 +92,18 @@
 .apod-details-image > img {
   width: 100%;
   height: 100%;
+}
+
+@media only screen and (max-width: 650px) {
+  .apod-details-text {
+    width: 100%;
+  }
+
+  .apod-details-image {
+    width: 100%;
+  }
+
+  .apod-text-img-wrapper {
+    max-height: fit-content;
+  }
 }
