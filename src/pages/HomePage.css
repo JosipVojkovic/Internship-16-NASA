@@ -79,6 +79,10 @@ header > .header-text {
   z-index: 1;
 }
 
+.dark-mode .navigation-card {
+  background-color: rgb(50, 50, 50);
+}
+
 .navigation-card:hover {
   border: 2px solid rgba(51, 52, 142);
 }

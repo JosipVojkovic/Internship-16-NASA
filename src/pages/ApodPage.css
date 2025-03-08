@@ -6,6 +6,7 @@
   padding: 50px 20px;
   margin-top: 80px;
   color: black;
+  min-height: calc(100vh - 80px);
 }
 
 .apod-gallery-section > h1 {
@@ -25,6 +26,10 @@
   z-index: 10;
   gap: 10px;
   box-shadow: 0 0 5px rgb(185, 185, 185);
+}
+
+.dark-mode .apod-filters {
+  background-color: rgb(50, 50, 50);
 }
 
 .apod-filters > input[type="date"] {

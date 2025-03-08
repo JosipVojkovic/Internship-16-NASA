@@ -1,9 +1,16 @@
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import {
+  useLocation,
+  useNavigate,
+  useOutletContext,
+  useParams,
+} from "react-router-dom";
 import "./ApodDetailsPage.css";
 import { APODData } from "../types";
 import { useEffect } from "react";
 
 export function ApodDetailsPage() {
+  const { darkMode } = useOutletContext<{ darkMode: boolean }>();
+
   const location = useLocation();
   const navigate = useNavigate();
   const { apodTitle } = useParams<{ apodTitle?: string }>();
@@ -34,7 +41,7 @@ export function ApodDetailsPage() {
   }
 
   return (
-    <section className="apod-details-section">
+    <section className={`apod-details-section ${darkMode ? "dark-mode" : ""}`}>
       <div className="apod-text-img-wrapper">
         <div className="apod-details-text">
           <h1>

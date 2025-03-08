@@ -8,9 +8,11 @@ import marsRoverAnimation from "../assets/images/marsRoverAnimation.png";
 import telescopeAnimation from "../assets/images/telescopeAnimation.jpg";
 import "./HomePage.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 
 export function HomePage() {
+  const { darkMode } = useOutletContext<{ darkMode: boolean }>();
+
   const [activeImage, setActiveImage] = useState<string>("");
 
   const navigate = useNavigate();
@@ -60,7 +62,7 @@ export function HomePage() {
         </div>
       </header>
 
-      <section className="navigation-cards">
+      <section className={`navigation-cards ${darkMode ? "dark-mode" : ""}`}>
         {activeImage && (
           <img src={activeImage} alt="" className={activeImageClass} />
         )}

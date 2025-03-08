@@ -10,10 +10,11 @@ import {
   MarsRoverPhotos,
 } from "../types/marsRoverTypes";
 import { MarsRoverPhotoCard } from "../components/MarsRoverPhotoCard";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 
 export function MarsRoverPage() {
-  const [page, setPage] = useState<number>(1);
+  const { darkMode } = useOutletContext<{ darkMode: boolean }>();
+
   const [data, setData] = useState<MarsRoverPhoto[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -78,7 +79,7 @@ export function MarsRoverPage() {
   console.log(data);
 
   return (
-    <section className="mars-rover-section">
+    <section className={`mars-rover-section ${darkMode ? "dark-mode" : ""}`}>
       <h1>Mars Rover</h1>
 
       <div className="mars-rover-filters">

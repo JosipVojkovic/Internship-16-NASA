@@ -5,6 +5,7 @@
   padding: 50px 20px;
   margin-top: 80px;
   color: black;
+  min-height: calc(100vh - 80px);
 }
 
 .neo-tracker-nav {
@@ -21,6 +22,15 @@
   padding: 5px;
   font-weight: 600;
   font-size: 18px;
+}
+
+.dark-mode a {
+  color: white;
+}
+
+.dark-mode .neo-details-section {
+  background-color: rgb(50, 50, 50);
+  color: white;
 }
 
 .neo-tracker-nav > a::after {

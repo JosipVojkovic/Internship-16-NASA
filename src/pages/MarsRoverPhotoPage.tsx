@@ -1,9 +1,16 @@
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import {
+  useLocation,
+  useNavigate,
+  useOutletContext,
+  useParams,
+} from "react-router-dom";
 import "./MarsRoverPhotoPage.css";
 import { MarsRoverPhoto } from "../types";
 import { useEffect } from "react";
 
 export function MarsRoverPhotoPage() {
+  const { darkMode } = useOutletContext<{ darkMode: boolean }>();
+
   const location = useLocation();
   const navigate = useNavigate();
   const { photoId } = useParams<{ photoId?: string }>();
@@ -33,7 +40,9 @@ export function MarsRoverPhotoPage() {
   }
 
   return (
-    <section className="mars-rover-details-section">
+    <section
+      className={`mars-rover-details-section ${darkMode ? "dark-mode" : ""}`}
+    >
       <div className="mars-rover-text-img-wrapper">
         <div className="mars-rover-details-text">
           <h1>

@@ -60,6 +60,10 @@
   overflow: hidden;
 }
 
+.dark-mode .location-image-wrapper {
+  background-color: black;
+}
+
 .leaflet-container {
   width: calc(50% - 20px);
   height: 70vh;
@@ -78,6 +82,10 @@
   border-left: 2px solid rgb(185, 185, 185);
   background-color: rgb(235, 235, 235);
   overflow: hidden;
+}
+
+.dark-mode .location-image-wrapper > .image-container {
+  background-color: rgb(50, 50, 50);
 }
 
 .location-image-wrapper > .image-container > img {
@@ -111,10 +119,18 @@
   border-bottom: 2px solid #ddd;
 }
 
+.dark-mode .favourite-locations-table th {
+  background-color: black;
+}
+
 .favourite-locations-table td {
   text-align: center;
   padding: 10px;
   border-bottom: 1px solid rgb(245, 245, 245);
+}
+
+.dark-mode .favourite-locations-table td {
+  background-color: rgb(50, 50, 50);
 }
 
 .no-locations-message {

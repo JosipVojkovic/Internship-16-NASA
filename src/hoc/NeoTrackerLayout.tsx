@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useOutletContext } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchFromAPI } from "../services/api";
 import { getNeos } from "../services";
@@ -7,6 +7,8 @@ import "./NeoTrackerLayout.css";
 import { Spinner } from "../components";
 
 export function NeoTrackerLayout() {
+  const { darkMode } = useOutletContext<{ darkMode: boolean }>();
+
   const [data, setData] = useState<NEOByDate>({});
   const [dates, setDates] = useState<string[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(0);
@@ -54,7 +56,7 @@ export function NeoTrackerLayout() {
   const chartData = processChartData();
 
   return (
-    <section className="neo-tracker-section">
+    <section className={`neo-tracker-section ${darkMode ? "dark-mode" : ""}`}>
       <nav className="neo-tracker-nav">
         <NavLink
           to="/neo-tracker"

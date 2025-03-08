@@ -2,9 +2,15 @@ import "./Navbar.css";
 import nasaLogo from "../assets/images/NASA-logo.png";
 import { NavLink } from "react-router-dom";
 
-export function Navbar() {
+export function Navbar({
+  handleModeChange,
+  darkMode,
+}: {
+  handleModeChange: () => void;
+  darkMode: boolean;
+}) {
   return (
-    <nav className="main-nav">
+    <nav className={`main-nav ${darkMode ? "main-nav-dark" : ""}`}>
       <div className="logo">
         <img src={nasaLogo} alt="NASA logo" />
       </div>
@@ -39,6 +45,8 @@ export function Navbar() {
         >
           Earth Imagery
         </NavLink>
+
+        <button onClick={handleModeChange}>Toggle Mode</button>
       </div>
     </nav>
   );

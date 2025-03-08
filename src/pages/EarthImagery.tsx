@@ -5,8 +5,11 @@ import { useEffect, useState } from "react";
 import { getLocationEarthImage } from "../services";
 import { fetchFromAPI } from "../services/api";
 import { EarthLocationImage, FavLocation } from "../types";
+import { useOutletContext } from "react-router-dom";
 
 export function EarthImageryPage() {
+  const { darkMode } = useOutletContext<{ darkMode: boolean }>();
+
   const [position, setPosition] = useState<[number, number] | null>(null);
   const [image, setImage] = useState<EarthLocationImage | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
@@ -72,7 +75,7 @@ export function EarthImageryPage() {
   console.log(favLocations);
 
   return (
-    <section className="earth-imagery-section">
+    <section className={`earth-imagery-section ${darkMode ? "dark-mode" : ""}`}>
       <h1>Earth Imagery</h1>
 
       <div className="location">

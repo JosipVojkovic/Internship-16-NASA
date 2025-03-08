@@ -6,6 +6,7 @@
   padding: 50px 20px;
   margin-top: 80px;
   color: black;
+  min-height: calc(100vh - 80px);
 }
 
 .mars-rover-text-img-wrapper {
@@ -15,6 +16,10 @@
   overflow: hidden;
   justify-content: space-between;
   max-height: 80vh;
+}
+
+.dark-mode .mars-rover-text-img-wrapper {
+  background-color: rgb(50, 50, 50);
 }
 
 .mars-rover-details-text {

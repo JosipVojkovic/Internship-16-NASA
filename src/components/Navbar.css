@@ -6,11 +6,29 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: black;
+  background-color: rgb(240, 240, 240);
+  color: black;
   padding: 0 20px;
   font-family: var(--font-ui);
   box-shadow: 0 0 3px 0.2px rgba(51, 52, 142);
   z-index: 10;
+}
+
+.main-nav a {
+  color: black;
+}
+
+.main-nav-dark {
+  background-color: black;
+  color: white;
+}
+
+.main-nav-dark a {
+  color: white;
+}
+
+.main-nav-dark button {
+  color: white;
 }
 
 .main-nav > .logo {
@@ -25,13 +43,14 @@
 
 .main-nav > .nav-links {
   display: flex;
+  align-items: center;
   gap: 20px;
   font-size: 20px;
 }
 
 .main-nav > .nav-links > a {
+  display: flex;
   text-decoration: none;
-  color: white;
   padding: 0 5px;
   position: relative;
 }
@@ -76,4 +95,21 @@
   width: 100%;
   transform: scaleX(1);
   background-color: rgba(51, 52, 142, 255);
+}
+
+.main-nav > .nav-links > button {
+  padding: 5px 10px;
+  border: 2px solid rgb(51, 52, 142);
+  border-radius: 5px;
+  background-color: transparent;
+  font-size: 18px;
+  cursor: pointer;
+  transition: ease 0.2s;
+  font-family: var(--font-ui);
+}
+
+.main-nav > .nav-links > button:hover {
+  background-color: rgb(51, 52, 142);
+  box-shadow: 0 0 5px rgb(185, 185, 185);
+  color: white;
 }

@@ -29,6 +29,9 @@
   cursor: pointer;
   transition: ease 0.2s;
 }
+.dark-mode .neo-object-page-controls > button {
+  color: white;
+}
 
 .neo-object-page-controls > button:disabled {
   color: lightgrey;
@@ -64,6 +67,10 @@
   border-radius: 20px;
   cursor: pointer;
   transition: ease 0.1s;
+}
+
+.dark-mode .neo-item {
+  background-color: rgb(50, 50, 50);
 }
 
 .neo-item:hover {

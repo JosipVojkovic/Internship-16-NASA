@@ -7,10 +7,12 @@ import {
 import "./ApodPage.css";
 import { fetchFromAPI } from "../services/api";
 import { APODData } from "../types";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import { ApodCard } from "../components/ApodCard";
 
 export function ApodPage() {
+  const { darkMode } = useOutletContext<{ darkMode: boolean }>();
+
   const [page, setPage] = useState<number>(1);
   const [data, setData] = useState<APODData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -87,8 +89,9 @@ export function ApodPage() {
   }, [loading]);
 
   return (
-    <section className="apod-gallery-section">
+    <section className={`apod-gallery-section ${darkMode ? "dark-mode" : ""}`}>
       <h1>Astronomy Picture of the Day (APOD) Gallery</h1>
+      {error && <p>{error}</p>}
       {loading && !data.length ? (
         <Spinner />
       ) : (

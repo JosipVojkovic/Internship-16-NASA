@@ -17,6 +17,10 @@
   max-height: 80vh;
 }
 
+.dark-mode .apod-text-img-wrapper {
+  background-color: rgb(50, 50, 50);
+}
+
 .apod-details-text {
   overflow: auto;
   position: relative;
